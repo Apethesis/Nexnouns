@@ -8,6 +8,7 @@ function execute(interaction, user) {
                     .setTitle(tag.uname)
                     .setThumbnail(interaction.options.getUser('user').displayAvatarURL())
                     .addFields(
+                        { name: "Age", value: `${tag.age}`, inline: true },
                         { name: "Gender", value: tag.gender, inline: true },
                         { name: "Pronouns", value: tag.pronouns, inline: true},
                         { name: "Sexuality", value: tag.sexuality, inline: true},
@@ -21,7 +22,7 @@ function execute(interaction, user) {
                     .setTitle(tag.uname)
                     .setThumbnail(interaction.options.getUser('user').displayAvatarURL())
                     .addFields(
-                        { name: "Age", value: tag.age, inline: true },
+                        { name: "Age", value: `${tag.age}`, inline: true },
                         { name: "Gender", value: tag.gender, inline: true },
                         { name: "Pronouns", value: tag.pronouns, inline: true},
                         { name: "Sexuality", value: tag.sexuality, inline: true},
