@@ -16,14 +16,14 @@ for (const file of commandFiles) {
 	}
 }
 
-const rest = new REST().setToken(token);
+const rest = new REST().setToken(process.env.TOK);
 
 (async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
 		const data = await rest.put(
-			Routes.applicationGuildCommands(clientId, guildId),
+			Routes.applicationCommands(process.env.CID),
 			{ body: commands },
 		);
 
