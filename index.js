@@ -11,6 +11,8 @@ const pdb = new Sequelize('pdb','postgres','root', {
 const user = pdb.define('user',
     {
         uid: {
+            primaryKey: true,
+            unique: true,
             type: DataTypes.STRING,
             allowNull: false
         },
