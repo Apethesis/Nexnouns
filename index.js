@@ -8,7 +8,7 @@ const pdb = new Sequelize('pdb','postgres','root', {
     dialect: 'postgres',
     logging: false,
 })
-const user = sequelize.define('user',
+const user = pdb.define('user',
     {
         uid: {
             type: DataTypes.STRING,
@@ -46,7 +46,7 @@ for (const file of commandFiles) {
 
 client.once(Events.ClientReady, client => {
     user.sync({ alter: true });
-    print("ellie is neat")
+    console.log("ellie is neat")
 })
 
 client.on(Events.InteractionCreate, interaction => {
